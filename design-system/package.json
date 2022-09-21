@@ -2,11 +2,15 @@
   "name": "design-system",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "microbundle --css-modules false -i src/index.ts --jsx React.createElement && cp -r src/fonts dist"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +29,10 @@
     "@storybook/manager-webpack5": "^6.5.8",
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
+    "@types/styled-components": "^5.1.0",
+    "@types/facepaint": "^1.2.2",
     "babel-loader": "^8.2.5",
+    "microbundle": "^0.12.2",
     "react": "17",
     "react-dom": "17"
   },
@@ -33,6 +40,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@storybook/builder-webpack5": "^6.5.12",
-    "facepaint": "^1.2.1"
+    "facepaint": "^1.2.1",
+    "styled-components": "^5.3.5"
   }
 }
