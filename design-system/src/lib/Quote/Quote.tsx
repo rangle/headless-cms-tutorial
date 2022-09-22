@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { DsFigure } from '../DsFigure'
+import { Figure } from '../Figure'
 import { mq, theme } from '../../theme'
 
-export interface DsQuoteProps {
+export interface QuoteProps {
   attribution: string
   quotation: string
   image: {
@@ -75,13 +75,13 @@ const StyledOpenQuote = styled(SvgOpenQuote)(() => {
   })
 })
 
-export function DsQuote({ attribution = '', quotation, image }: DsQuoteProps) {
+export function Quote({ attribution = '', quotation, image }: QuoteProps) {
   return (
     <StyledQuote className='ds-quote ds-section-spacing'>
       <div>
         <StyledImageContainer>
           {image &&
-            <DsFigure src={image.src} alt={image.alt} />
+            <Figure src={image.src} alt={image.alt} />
           }
         </StyledImageContainer>
       </div>
@@ -100,4 +100,4 @@ export function DsQuote({ attribution = '', quotation, image }: DsQuoteProps) {
   )
 }
 
-export default DsQuote
+export default Quote

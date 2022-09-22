@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 import { Story, Meta } from '@storybook/react'
-import { DsQuote, DsQuoteProps } from './DsQuote'
+import { Quote, QuoteProps } from './Quote'
 import { mq, theme } from '../../theme'
 
 const StyledStory = styled.div(() =>
@@ -24,11 +24,11 @@ export default {
       }
     }
   },
-  component: DsQuote,
+  component: Quote,
   decorators: [(Story) => <StyledStory>{Story()}</StyledStory>]
 } as Meta
 
-const Template: Story<DsQuoteProps> = (args) => <DsQuote {...args}></DsQuote>
+const Template: Story<QuoteProps> = (args) => <Quote {...args}></Quote>
 
 export const Sample = Template.bind({})
 Sample.args = {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-export type DsFigureProps = {
+export type FigureProps = {
   src: string
   alt: string
   caption?: string
@@ -19,12 +19,12 @@ const StyledImage = styled.img<{ isCover: boolean }>`
   width: 100%;
 `
 
-export const DsFigure = ({
+export const Figure = ({
   src = '',
   alt = '',
   caption = '',
   isCover = false
-}: DsFigureProps) => {
+}: FigureProps) => {
   const cloudinarySrc = src?.split('/upload')
 
   if (!cloudinarySrc || cloudinarySrc.length <= 1) {
