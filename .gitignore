@@ -12,17 +12,17 @@
 /coverage
 
 # next.js
-/website/.next
-/website/node_modules
-/website/out/
+/packages/website/.next
+/packages/website/node_modules
+/packages/website/out/
 .next
 
 # sanity
-/studio/node_modules
+/packages/studio/node_modules
 
 # radius-ds
-/design-system/node_modules
-/design-system/storybook-static
+/packages/design-system/node_modules
+/packages/design-system/storybook-static
 
 # production
 /build
