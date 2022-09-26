@@ -4,13 +4,16 @@ import * as queries from './queries'
 const isProduction =
   process.env.NODE_ENV === 'production' && process.env.BUILD_ENV !== 'draft'
 
-// const { getFormattedTypeQuery } = queries
+const { getFormattedTypeQuery } = queries
 // 
 // Fetch a static page with our global data
 export async function getStaticPage(pageData) {
   const query = `
   {
     "page": ${pageData},
+    "global": {
+      "navigation": ${getFormattedTypeQuery('navigation')}
+    }
   }
   `
 

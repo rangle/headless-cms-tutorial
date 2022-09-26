@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { buildSrcSet, SanityImageProps } from '../../utils/buildSrcSet'
 
 export type FigureProps = {
-  src: string
-  alt: string
   caption?: string
+  image: SanityImageProps
   isCover?: boolean
 }
 
@@ -20,25 +20,14 @@ const StyledImage = styled.img<{ isCover: boolean }>`
 `
 
 export const Figure = ({
-  src = '',
-  alt = '',
-  caption = '',
+  image,
   isCover = false
 }: FigureProps) => {
-  const cloudinarySrc = src?.split('/upload')
-
-  if (!cloudinarySrc || cloudinarySrc.length <= 1) {
-    return null
-  }
-
-  const optimizedSrc = `${cloudinarySrc[0]}/upload/w_auto,q_auto${cloudinarySrc[1]}`
-
   return (
     <span className='ds-figure'>
       <StyledFigure>
-        <StyledImage isCover={isCover} src={optimizedSrc} alt={alt} />
+        <StyledImage isCover={isCover} src={buildSrcSet(image)}  />
       </StyledFigure>
-      {caption && <figcaption className='ds-small-body'>{caption}</figcaption>}
     </span>
   )
 }

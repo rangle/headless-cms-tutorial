@@ -4,12 +4,14 @@ import Link from 'next/link'
 import { pascalCase } from 'pascal-case'
 import {
   Figure,
+  Navigation,
   Quote
 } from '../../design-system'
 
 const Fallback = (props) => <div {...props} />
 const components = {
   Figure,
+  Navigation,
   Quote
 }
 

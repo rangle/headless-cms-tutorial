@@ -5,4 +5,4 @@ export declare type FigureProps = {
     caption?: string;
     isCover?: boolean;
 };
-export declare const Figure: ({ src, alt, caption, isCover }: FigureProps) => JSX.Element | null;
+export declare const Figure: ({ src, alt, caption, isCover }: FigureProps) => JSX.Element;

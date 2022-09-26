@@ -2,14 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Figure } from '../Figure'
 import { mq, theme } from '../../theme'
+import { SanityImageProps } from '../../utils/buildSrcSet'
 
 export interface QuoteProps {
   attribution: string
   quotation: string
-  image: {
-    src: string
-    alt: string
-  }
+  image: SanityImageProps
 }
 
 const StyledQuote = styled.div(() =>
@@ -81,7 +79,7 @@ export function Quote({ attribution = '', quotation, image }: QuoteProps) {
       <div>
         <StyledImageContainer>
           {image &&
-            <Figure src={image.src} alt={image.alt} />
+            <Figure image={image} />
           }
         </StyledImageContainer>
       </div>

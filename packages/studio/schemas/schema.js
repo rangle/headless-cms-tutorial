@@ -3,6 +3,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import figure from './figure'
 import homePage from './home-page'
+import navigation from './navigation'
 import quote from './quote'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -14,6 +15,7 @@ export default createSchema({
   types: schemaTypes.concat([
     figure,
     homePage,
+    navigation,
     quote
   ]),
 })

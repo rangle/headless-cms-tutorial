@@ -1,15 +1,19 @@
+import React from 'react'
 import { getStaticPage, queries } from '../data'
+import Layout from '../layout'
 import { buildPageProps } from '../utils/buildPage'
 
 const Index = ({data}) => {
   const page = buildPageProps(data.page)
+  const global = buildPageProps(data.global)
+
+  console.log(data)
   const { modules } = page
   
   return (
-    <div>
-      <p>Hello world!</p>
+    <Layout global={global}>
       <>{ modules }</>
-    </div>
+    </Layout>
   )
 }
 
