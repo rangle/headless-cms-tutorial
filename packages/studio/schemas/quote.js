@@ -16,11 +16,11 @@ export default {
       name: 'attribution',
       type: 'string'
     },
-    // {
-    //   title: 'Image',
-    //   name: 'image',
-    //   type: 'picture'
-    // }
+    {
+      title: 'Image',
+      name: 'image',
+      type: 'image'
+    }
   ],
   preview: {
     select: {

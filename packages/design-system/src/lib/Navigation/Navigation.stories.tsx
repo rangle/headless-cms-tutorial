@@ -24,8 +24,9 @@ const defaultArgs: NavigationProps = {
   contactLabel: 'Talk to us',
   frameworkLinkTag: '',
   image: {
-    src: 'https://res.cloudinary.com/rangle/image/upload/v1647100684/rangle.io/smlprjojskmatamnzklw.svg',
-    alt: 'rangle logo',
+    asset: {
+      _ref: "image-c5182d7aa7065958dab8a14da6f30f7b03ad9320-99x26-svg"
+    }
   },
   navigationItems: [
     {

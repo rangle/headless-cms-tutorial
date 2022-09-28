@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useMemo, useRef, useState } from 'react'
+import React, { createRef, useEffect, useRef, useState } from 'react'
 import styled from '@emotion/styled'
 import { Figure } from '../Figure'
 import { mq, theme } from '../../theme'
@@ -124,18 +124,6 @@ const StyledContact = styled.div(() =>
   })
 )
 
-const SubmenuIcon = (props: any) => (
-  <svg
-    width={11}
-    height={5}
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-    {...props}
-  >
-    <path d='m.5 5 5-5 5 5H.5Z' fill='#D44527' />
-  </svg>
-)
-
 const HamburgerIcon = (props: any) => (
   <svg width={100} height={100} {...props}>
     <path
@@ -195,15 +183,6 @@ const StyledHamburgerIcon = styled(HamburgerIcon)(() => {
     }
   })
 })
-
-const StyledButton = styled.button(() =>
-  mq({
-    border: 0,
-    backgroundColor: 'transparent',
-    cursor: 'pointer',
-    padding: 0
-  })
-)
 
 const StyledSpacing = styled.div(() =>
   mq({
@@ -274,8 +253,6 @@ export function Navigation({
       </Link>
     )
   }
-
-  console.log({image})
 
   return (
     <>

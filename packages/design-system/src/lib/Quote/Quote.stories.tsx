@@ -35,7 +35,8 @@ Sample.args = {
   attribution: 'Lance Martel, CIO, Staples Canada',
   quotation: 'Rangle gave us permission to prioritize the customer because true innovation is anchored by the customer…and how we drive better experiences for them.',
   image: {
-    src: 'https://res.cloudinary.com/rangle/image/upload/v1659468735/rangle.io/rangle-dev-website/Component-Quote/dj8a5blg4xrtjuosxsqt.png',
-    alt: 'Staples'
+    asset: {
+      _ref: "image-d7133120bee18e763d3ada7b03ce40c24157f508-917x1218-jpg"
+    }
   }
 }

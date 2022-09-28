@@ -1,4 +1,5 @@
 import { Browser } from 'phosphor-react'
+import customBlock from '../lib/custom-block'
 
 export default {
   title: 'Home Page',
@@ -11,11 +12,14 @@ export default {
       name: 'modules',
       type: 'array',
       of: [
+        customBlock(
+          'codehighlight italic strong',
+          'h1 h2 h3 smallBody',
+          'bullet number',
+          'link'
+        ),
         { type: 'quote' }
       ],
-      options: {
-        editModal: 'fullscreen'
-      }
     },
     {
       name: 'pageTitle',

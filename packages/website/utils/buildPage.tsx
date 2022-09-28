@@ -2,23 +2,33 @@
 import React from 'react'
 import Link from 'next/link'
 import { pascalCase } from 'pascal-case'
-import {
-  Figure,
-  Navigation,
-  Quote
-} from '../../design-system'
+import { Figure, Link as DsLink, Navigation, Quote } from '../../design-system'
+
+import * as cmsComponents from '../components'
 
 const Fallback = (props) => <div {...props} />
 const components = {
   Figure,
+  DsLink,
   Navigation,
-  Quote
+  Quote,
+  ...cmsComponents
 }
 
 export const componentSelector = (componentType = '') => {
   return (
+    components[`Ds${pascalCase(componentType)}`] ||
     components[pascalCase(componentType)] ||
     Fallback
+  )
+}
+
+const isRichText = (val) => {
+  return (
+    Array.isArray(val) &&
+    val.find((content) => {
+      return content?._type === 'richText'
+    })
   )
 }
 
@@ -27,6 +37,10 @@ const isObject = (value) => {
 }
 
 const hasSubComponent = (val) => {
+  if (isRichText(val)) {
+    return true
+  }
+
   if (Array.isArray(val)) {
     return !!val.find(
       (content) =>
@@ -38,6 +52,22 @@ const hasSubComponent = (val) => {
 }
 
 export const buildComponent = (componentData, buildContext) => {
+  if (isRichText(componentData)) {
+    const Component = componentSelector('richText')
+    const props = componentData.map((item) => {
+      return buildPageProps(item, buildContext)
+    })
+
+    return (
+      <Component
+        value={props}
+        {...buildContext}
+        frameworkLinkTag={Link}
+        references={{}}
+      />
+    )
+  }
+
   const Component = componentSelector(componentData._type)
   const props = buildPageProps(componentData, buildContext)
 
@@ -54,17 +84,17 @@ export const buildComponent = (componentData, buildContext) => {
 export const buildPageProps = (pageData, buildContext = {}) => {
   let props = { ...pageData }
 
-  if (props._type === 'cloudinary.asset') {
-    return props.secure_url
-  }
-
   Object.keys(props).forEach((field) => {
     const val = props[field]
     if (hasSubComponent(val)) {
       if (Array.isArray(val)) {
-        props[field] = val.map((sub) =>
+        if (isRichText(val)) {
+          props[field] = buildComponent(val, buildContext)
+        } else {
+          props[field] = val.map((sub) =>
             hasSubComponent(sub) ? buildComponent(sub, buildContext) : sub
           )
+        }
       } else {
         props[field] = buildComponent(val, buildContext)
       }

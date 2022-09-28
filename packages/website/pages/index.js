@@ -7,12 +7,13 @@ const Index = ({data}) => {
   const page = buildPageProps(data.page)
   const global = buildPageProps(data.global)
 
-  console.log(data)
   const { modules } = page
   
   return (
     <Layout global={global}>
-      <>{ modules }</>
+      <div className="ds-page-wrapper">
+        { modules }
+      </div>
     </Layout>
   )
 }

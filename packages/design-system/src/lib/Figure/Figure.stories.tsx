@@ -23,9 +23,11 @@ export default {
 const Template: Story<FigureProps> = (args) => <Figure {...args} />
 
 const defaultArgs: FigureProps = {
-  src: 'https://res.cloudinary.com/rangle/image/upload/v1646629479/rangle.io/n67h61fgrfkbgddfhmn2.jpg',
-  alt: 'tester', 
-  caption: 'I am a caption'
+  image: {
+    asset: {
+      _ref: "image-d7133120bee18e763d3ada7b03ce40c24157f508-917x1218-jpg"
+    }
+  }
 }
 export const Default = Template.bind({})
 Default.args = defaultArgs

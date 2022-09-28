@@ -1,4 +1,5 @@
 export * from './lib/Figure';
+export * from './lib/Link';
 export * from './lib/Navigation';
 export * from './lib/Quote';
 export * from './theme';
