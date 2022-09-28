@@ -23,6 +23,8 @@ There are three separate directories within the `packages` folder that contain t
 
 *This script will spin up the Sanity.io CMS development environment at localhost:3333. This is where we will create new data models (called schemas in sanity), and add content to display on the frontend.*
 
+Note: If this is your first time using Sanity, you will need to install the Sanity CLI. Run `npm install -g @sanity/cli` to install.
+
 ## packages/website
 
 `yarn install`
