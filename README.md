@@ -8,21 +8,27 @@ There are three separate directories within the `packages` folder that contain t
 `yarn install`
 
 `yarn run dev`
+
 *This script will spin up the design system's Storybook development environment at localhost:6006. Here, you can see the reusable components that can be rendered in our frontend.*
 
 `yarn run build`
-*This script will compile and build the design system from what is exported in `design-system/src/index.ts`. The output of this build can be found at design-system/dist. This output is used by NextJs to serve the live site with up-to-date changes.*
 
-## packages/website
-
-`yarn install`
-
-`yarn run dev`
-*This script will spin up the Next.js static site generator  at localhost:3000. You can see your development changed reflected in this environment.*
+*This script will compile and build the design system from what is exported in `design-system/src/index.ts`. The output of this build can be found at design-system/dist, which is used by Next.js to serve the live site with up-to-date changes. Whenever you add a new component to the design system you must run this command for it to be available to the frontend.*
 
 ## packages/studio
 
 `yarn install`
 
 `sanity start`
+
 *This script will spin up the Sanity.io CMS development environment at localhost:3333. This is where we will create new data models (called schemas in sanity), and add content to display on the frontend.*
+
+## packages/website
+
+`yarn install`
+
+`yarn run dev`
+
+*This script will spin up the Next.js static site generator  at localhost:3000. You can see your development changed reflected in this environment.*
+
+After you have all three of the environments running, you're ready to go! You'll see further instructions at localhost:3000
