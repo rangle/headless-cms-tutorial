@@ -20,6 +20,17 @@ export const pages = S.listItem()
           .id('homePage')
           .title('Home')
           .schemaType('homePage'),
-        S.divider()
+        S.divider(),
+        S.documentListItem()
+          .icon(Info)
+          .id('infoPage')
+          .title('Info')
+          .schemaType('infoPage'),
+        S.divider(),
+        S.listItem()
+          .title('Challenges')
+          .icon(Article)
+          .child(S.documentTypeList('challengePage').title('Challenges'))
+
       ])
   )

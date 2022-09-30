@@ -291,7 +291,7 @@ export function Navigation({
 
           {/* Contact us -- For Mobile, this button is not going to appear */}
           <StyledContact>
-            <Link href='/contact-us' passHref>
+            <Link href='/info' passHref>
               <a className='ds-small-body ds-navigation-link'>{contactLabel}</a>
             </Link>
           </StyledContact>

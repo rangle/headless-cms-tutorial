@@ -1,8 +1,9 @@
 import { Browser } from 'phosphor-react'
+import customBlock from '../lib/custom-block'
 
 export default {
-  title: 'Home Page',
-  name: 'homePage',
+  title: 'Info Page',
+  name: 'infoPage',
   type: 'document',
   icon: Browser,
   fields: [
@@ -11,7 +12,12 @@ export default {
       name: 'content',
       type: 'array',
       of: [
-        { type: 'mediaModule' },
+        customBlock(
+          'codehighlight italic strong',
+          'h1 h2 h3 smallBody',
+          'bullet number',
+          'link'
+        ),
         { type: 'quote' }
       ],
     },
@@ -25,7 +31,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: 'Home Page'
+        title: 'Info Page'
       }
     }
   }

@@ -1,18 +1,25 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Layout from '../layout'
 import { getStaticPage, queries } from '../data'
 import { buildPageProps } from '../utils/buildPage'
 
-const Index = ({ data }) => {
+const StyledWrapper = styled.div`
+  padding-top: 2rem;
+`
+
+const Info = ({data}) => {
   const page = buildPageProps(data.page)
   const global = buildPageProps(data.global)
 
   const { content } = page
-
+  
   return (
     <Layout global={global}>
-      <div className='ds-page-wrapper'>{content}</div>
+      <StyledWrapper className="ds-page-wrapper">
+        {content}
+      </StyledWrapper>
     </Layout>
   )
 }
@@ -20,7 +27,7 @@ const Index = ({ data }) => {
 export async function getStaticProps({ preview }) {
   const pageData = await getStaticPage(
     queries.getFormattedTypeQuery(
-      'homePage',
+      'infoPage',
       `{
         "id": _id,
         content[],
@@ -37,4 +44,4 @@ export async function getStaticProps({ preview }) {
   }
 }
 
-export default Index
+export default Info

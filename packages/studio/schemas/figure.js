@@ -7,16 +7,10 @@ export default {
   icon: Image,
   type: 'object',
   fields: [
-    // {
-    //   title: 'Source',
-    //   name: 'src',
-    //   type: 'cloudinary.asset',
-    //   validation: (Rule) => Rule.required()
-    // },
     {
-      title: 'Caption',
-      name: 'caption',
-      type: 'string'
+      title: 'Image',
+      name: 'image',
+      type: 'image'
     },
     {
       title: 'Alt',

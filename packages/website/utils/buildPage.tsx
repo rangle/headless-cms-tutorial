@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { pascalCase } from 'pascal-case'
-import { Figure, Link as DsLink, Navigation, Quote } from '../../design-system'
+import { Figure, Link as DsLink, Navigation, MediaModule, Quote } from '../../design-system'
 
 import * as cmsComponents from '../components'
 
@@ -10,6 +10,7 @@ const Fallback = (props) => <div {...props} />
 const components = {
   Figure,
   DsLink,
+  MediaModule,
   Navigation,
   Quote,
   ...cmsComponents
