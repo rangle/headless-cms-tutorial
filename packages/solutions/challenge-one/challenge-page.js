@@ -1,3 +1,5 @@
+// The only code change needed for this challenge is to add the `quote` type to the content array for the page (line 20)
+
 export default {
   title: 'Challenge Page',
   name: 'challengePage',
@@ -14,7 +16,8 @@ export default {
       name: 'content',
       type: 'array',
       of: [
-        { type: 'mediaModule' }
+        { type: 'mediaModule' },
+        { type: 'quote' }
       ]
     },
   ]
