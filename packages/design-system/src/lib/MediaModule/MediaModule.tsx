@@ -22,7 +22,7 @@ const StyledWrapper = styled.div(
       gap: ['', '', image ? '2rem' : ''],
       flexDirection: [
         '',
-        image && variant === 'Media Left' ? 'row-reverse' : 'row'
+        image && variant === 'Media Right' ? 'row-reverse' : 'row'
       ]
     })
   }
